@@ -8,6 +8,9 @@ on:
     # 매일 오전 9시(KST)에 실행 (UTC 기준 자정에 해당)
     - cron: '0 0 * * *'
 
+permissions:
+  contents: write
+
 jobs:
   scrape:
     runs-on: ubuntu-latest # 가상 컴퓨터는 우분투(리눅스) 환경
