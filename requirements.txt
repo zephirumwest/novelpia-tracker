@@ -1,5 +1,4 @@
-# requirements.txt (Clean Version)
+# requirements.txt
 selenium
 beautifulsoup4
 pandas
-schedule

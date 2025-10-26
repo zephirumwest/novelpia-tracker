@@ -1,8 +1,6 @@
-# main.py (Upgraded Version)
+# main.py (GitHub Actions Version)
 
 import pandas as pd
-import schedule
-import time
 from datetime import datetime
 from scraper import get_novel_stats
 
@@ -13,12 +11,12 @@ def job():
 
     current_stats = get_novel_stats()
     if not current_stats:
-        print("Main: 데이터를 가져오는 데 실패하여 이번 주기는 건너뜁니다.")
-        return
+        print("Main: 데이터를 가져오는 데 실패했습니다.")
+        # 실패 시 비정상 종료 코드를 반환하여 GitHub Actions에 알림
+        exit(1)
 
     print(f"Main: 현재 조회수 - 1화({current_stats['ep1_views']}), 최신화({current_stats['latest_ep_views']})")
 
-    # 변동량 변수를 0으로 초기화
     ep1_diff = 0
     latest_ep_diff = 0
     
@@ -26,7 +24,6 @@ def job():
         df = pd.read_csv(CSV_FILE)
     except FileNotFoundError:
         print("Main: stats.csv 파일이 없어 새로 생성합니다.")
-        # !! 변경점: 새로운 컬럼 이름으로 데이터프레임 생성
         df = pd.DataFrame(columns=['date', 'ep1_views', 'ep1_diff', 'latest_ep_views', 'latest_ep_diff'])
 
     if not df.empty:
@@ -39,10 +36,8 @@ def job():
         print(f"🚀 최신화 성장세: {latest_ep_diff:+,}")
         print("---------------------------\n")
 
-    # !! 변경점: 오늘 날짜를 YYYY-MM-DD 형식으로 저장
     today_date = datetime.now().strftime('%Y-%m-%d')
     
-    # !! 변경점: 새로운 5개 컬럼에 맞춰 데이터 행 생성
     new_row = pd.DataFrame([{
         'date': today_date,
         'ep1_views': current_stats['ep1_views'],
@@ -54,15 +49,8 @@ def job():
     df = pd.concat([df, new_row], ignore_index=True)
     df.to_csv(CSV_FILE, index=False)
     print(f"Main: '{CSV_FILE}' 파일에 새로운 데이터를 저장했습니다.")
-    print(f"{'='*12} 작업 완료. 다음 실행을 기다립니다. {'='*12}")
+    print(f"{'='*12} 작업 완료. {'='*12}")
 
-# --- (스케줄러 실행 부분은 이전과 동일) ---
+# --- 이 스크립트가 실행되면 job() 함수를 딱 한 번만 호출하고 종료 ---
 if __name__ == "__main__":
     job()
-    schedule.every(1).minutes.do(job)
-    print("="*50)
-    print("🚀 [업그레이드 버전] 조회수 트래커가 시작되었습니다.")
-    print("="*50)
-    while True:
-        schedule.run_pending()
-        time.sleep(1)
