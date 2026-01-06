@@ -1,0 +1,254 @@
+2025-12-17 02:12:21,149 - INFO - ������ �ε� �� 'ùȭ����' ���� ���� Ȯ�� ��...
+2025-12-17 02:12:21,320 - INFO - 'ùȭ���� ���' ���� ��ư Ŭ�� ��...
+2025-12-17 02:12:21,344 - INFO - ���� ���� ��� ��...
+2025-12-17 02:12:21,862 - INFO - ���� ���� �Ϸ�. '�ֽ�ȭ����' ����.
+2025-12-17 02:12:22,011 - ERROR - ��ũ���� �� �ɰ��� ���� �߻�: 'NoneType' object has no attribute 'text'
+Traceback (most recent call last):
+  File "C:\Users\user\Desktop\user\novelpia\scraper.py", line 70, in get_novel_stats
+    latest_ep_title = latest_ep_element.select_one("td.font12 > b").text.strip()
+AttributeError: 'NoneType' object has no attribute 'text'
+2025-12-17 02:17:21,208 - INFO - 페이지 로딩 및 '첫화부터' 정렬 상태 확인 중...
+2025-12-17 02:17:21,402 - INFO - '첫화부터 ↓↑' 정렬 버튼 클릭 중...
+2025-12-17 02:17:21,424 - INFO - 정렬 변경 대기 중...
+2025-12-17 02:17:21,946 - INFO - 정렬 변경 완료. '최신화부터' 상태.
+2025-12-17 02:17:22,085 - INFO - 타겟 1순위 회차: 'PLUS
+                      
+				심해의 마법사', 조회수: 6615
+2025-12-17 02:18:33,293 - INFO - 페이지 로딩 및 '첫화부터' 정렬 상태 확인 중...
+2025-12-17 02:18:33,477 - INFO - '첫화부터 ↓↑' 정렬 버튼 클릭 중...
+2025-12-17 02:18:33,499 - INFO - 정렬 변경 대기 중...
+2025-12-17 02:18:34,030 - INFO - 정렬 변경 완료. '최신화부터' 상태.
+2025-12-17 02:18:34,172 - INFO - 타겟 1순위 회차: 'PLUS
+                      
+				심해의 마법사', 조회수: 6615
+2025-12-17 02:18:34,172 - WARNING - 조회수가 0으로 감지되어 예비 타겟을 확인합니다.
+2025-12-17 02:18:34,172 - INFO - 예비 타겟 회차: 'PLUS
+                      
+				모래 대가리', 조회수: 10886
+2025-12-21 18:15:33,382 - INFO - 페이지 로딩 및 '첫화부터' 정렬 상태 확인 중...
+2025-12-21 18:15:33,561 - INFO - '첫화부터 ↓↑' 정렬 버튼 클릭 중...
+2025-12-21 18:15:33,590 - INFO - 정렬 변경 대기 중...
+2025-12-21 18:15:34,137 - INFO - 정렬 변경 완료. '최신화부터' 상태.
+2025-12-21 18:15:34,290 - INFO - 타겟 1순위 회차: 'PLUS
+                      
+				세계 공지', 조회수: 9970
+2026-01-06 19:27:25,726 - ERROR - 스크래핑 중 심각한 오류 발생: name 'options' is not defined
+Traceback (most recent call last):
+  File "c:\Users\user\Desktop\user\novelpia\scraper.py", line 17, in get_novel_stats
+    driver = webdriver.Chrome(options=options)
+NameError: name 'options' is not defined
+2026-01-06 19:28:24,313 - ERROR - 스크래핑 중 심각한 오류 발생: name 'options' is not defined
+Traceback (most recent call last):
+  File "C:\Users\user\Desktop\user\novelpia\scraper.py", line 17, in get_novel_stats
+    driver = webdriver.Chrome(options=options)
+NameError: name 'options' is not defined
+2026-01-06 19:29:05,126 - INFO - 페이지 로딩 및 '첫화부터' 정렬 상태 확인 중...
+2026-01-06 19:29:05,392 - INFO - '첫화부터 ↓↑' 정렬 버튼 클릭 중...
+2026-01-06 19:29:05,429 - INFO - 정렬 변경 대기 중...
+2026-01-06 19:29:06,484 - INFO - 정렬 변경 완료. '최신화부터' 상태.
+2026-01-06 19:29:06,702 - INFO - 타겟 1순위 회차: 'PLUS
+                      
+				발표(2)', 조회수: 11503
+2026-01-06 19:29:40,100 - INFO - 페이지 로딩 및 '첫화부터' 정렬 상태 확인 중...
+2026-01-06 19:29:40,300 - INFO - '첫화부터 ↓↑' 정렬 버튼 클릭 중...
+2026-01-06 19:29:40,329 - INFO - 정렬 변경 대기 중...
+2026-01-06 19:29:40,850 - INFO - 정렬 변경 완료. '최신화부터' 상태.
+2026-01-06 19:29:41,024 - INFO - 타겟 1순위 회차: 'PLUS
+                      
+				발표(2)', 조회수: 11503
+2026-01-06 19:29:41,025 - WARNING - 조회수가 0으로 감지되었습니다. 예비 타겟(두 번째 회차)을 확인합니다.
+2026-01-06 19:29:41,025 - INFO - 예비 타겟 회차: 'PLUS
+                      
+				발표(1)', 조회수: 13340
+2026-01-06 19:29:50,791 - INFO - 페이지 로딩 및 '첫화부터' 정렬 상태 확인 중...
+2026-01-06 19:29:50,996 - INFO - '첫화부터 ↓↑' 정렬 버튼 클릭 중...
+2026-01-06 19:29:51,020 - INFO - 정렬 변경 대기 중...
+2026-01-06 19:29:51,543 - INFO - 정렬 변경 완료. '최신화부터' 상태.
+2026-01-06 19:29:51,720 - INFO - 타겟 1순위 회차: 'PLUS
+                      
+				발표(2)', 조회수: 11503
+2026-01-06 19:29:51,721 - WARNING - 조회수가 0으로 감지되었습니다. 예비 타겟(두 번째 회차)을 확인합니다.
+2026-01-06 19:29:51,722 - INFO - 예비 타겟 회차: 'PLUS
+                      
+				발표(1)', 조회수: 13340
+2026-01-06 19:30:01,961 - INFO - 페이지 로딩 및 '첫화부터' 정렬 상태 확인 중...
+2026-01-06 19:30:02,150 - INFO - '첫화부터 ↓↑' 정렬 버튼 클릭 중...
+2026-01-06 19:30:02,179 - INFO - 정렬 변경 대기 중...
+2026-01-06 19:30:02,710 - INFO - 정렬 변경 완료. '최신화부터' 상태.
+2026-01-06 19:30:02,865 - INFO - 타겟 1순위 회차: 'PLUS
+                      
+				발표(2)', 조회수: 11503
+2026-01-06 19:30:02,865 - WARNING - 조회수가 0으로 감지되었습니다. 예비 타겟(두 번째 회차)을 확인합니다.
+2026-01-06 19:30:02,866 - INFO - 예비 타겟 회차: 'PLUS
+                      
+				발표(1)', 조회수: 13340
+2026-01-06 19:30:11,433 - INFO - 페이지 로딩 및 '첫화부터' 정렬 상태 확인 중...
+2026-01-06 19:30:11,637 - INFO - '첫화부터 ↓↑' 정렬 버튼 클릭 중...
+2026-01-06 19:30:11,666 - INFO - 정렬 변경 대기 중...
+2026-01-06 19:30:12,198 - INFO - 정렬 변경 완료. '최신화부터' 상태.
+2026-01-06 19:30:12,379 - INFO - 타겟 1순위 회차: 'PLUS
+                      
+				발표(2)', 조회수: 11503
+2026-01-06 19:30:12,379 - WARNING - 조회수가 0으로 감지되었습니다. 예비 타겟(두 번째 회차)을 확인합니다.
+2026-01-06 19:30:12,380 - INFO - 예비 타겟 회차: 'PLUS
+                      
+				발표(1)', 조회수: 13340
+2026-01-06 19:30:20,333 - INFO - 페이지 로딩 및 '첫화부터' 정렬 상태 확인 중...
+2026-01-06 19:30:20,534 - INFO - '첫화부터 ↓↑' 정렬 버튼 클릭 중...
+2026-01-06 19:30:20,566 - INFO - 정렬 변경 대기 중...
+2026-01-06 19:30:21,110 - INFO - 정렬 변경 완료. '최신화부터' 상태.
+2026-01-06 19:30:21,272 - INFO - 타겟 1순위 회차: 'PLUS
+                      
+				발표(2)', 조회수: 11503
+2026-01-06 19:30:21,272 - WARNING - 조회수가 0으로 감지되었습니다. 예비 타겟(두 번째 회차)을 확인합니다.
+2026-01-06 19:30:21,272 - INFO - 예비 타겟 회차: 'PLUS
+                      
+				발표(1)', 조회수: 13340
+2026-01-06 19:30:30,331 - INFO - 페이지 로딩 및 '첫화부터' 정렬 상태 확인 중...
+2026-01-06 19:30:30,523 - INFO - '첫화부터 ↓↑' 정렬 버튼 클릭 중...
+2026-01-06 19:30:30,549 - INFO - 정렬 변경 대기 중...
+2026-01-06 19:30:31,080 - INFO - 정렬 변경 완료. '최신화부터' 상태.
+2026-01-06 19:30:31,245 - INFO - 타겟 1순위 회차: 'PLUS
+                      
+				발표(2)', 조회수: 11503
+2026-01-06 19:30:31,245 - WARNING - 조회수가 0으로 감지되었습니다. 예비 타겟(두 번째 회차)을 확인합니다.
+2026-01-06 19:30:31,246 - INFO - 예비 타겟 회차: 'PLUS
+                      
+				발표(1)', 조회수: 13340
+2026-01-06 19:50:53,504 - INFO - ========== 스크래핑 시도 1/3 ==========
+2026-01-06 19:50:58,956 - INFO - 페이지 로딩 및 '첫화부터' 정렬 상태 확인 중...
+2026-01-06 19:50:59,126 - INFO - 1화 조회수(75920) 확인 완료.
+2026-01-06 19:50:59,126 - INFO - '첫화부터 ↓↑' 정렬 버튼 클릭...
+2026-01-06 19:50:59,149 - INFO - 정렬 변경 대기 중...
+2026-01-06 19:51:09,915 - ERROR - 오류 발생 (시도 1): Message: 
+Stacktrace:
+Symbols not available. Dumping unresolved backtrace:
+	0x7ff74eff88e5
+	0x7ff74eff8940
+	0x7ff74edd165d
+	0x7ff74ee29a33
+	0x7ff74ee29d3c
+	0x7ff74ee7df67
+	0x7ff74ee7ac97
+	0x7ff74ee1ac29
+	0x7ff74ee1ba93
+	0x7ff74f310640
+	0x7ff74f30af80
+	0x7ff74f3296e6
+	0x7ff74f015de4
+	0x7ff74f01ed8c
+	0x7ff74f002004
+	0x7ff74f0021b5
+	0x7ff74efe7ee2
+	0x7ffb73457374
+	0x7ffb746fcc91
+
+2026-01-06 19:51:12,151 - INFO - 오류로 인해 재시도합니다...
+2026-01-06 19:51:21,300 - WARNING - Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000001F17A9D9A20>: Failed to establish a new connection: [WinError 10061] 대상 컴퓨터에서 연결을 거부했으므로 연결하지 못했습니다')': /session/425d7a5bbee80e6a911a1e7a118162d0
+2026-01-06 19:51:25,390 - WARNING - Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000001F17A9DA560>: Failed to establish a new connection: [WinError 10061] 대상 컴퓨터에서 연결을 거부했으므로 연결하지 못했습니다')': /session/425d7a5bbee80e6a911a1e7a118162d0
+2026-01-06 19:51:29,480 - WARNING - Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000001F17A98F850>: Failed to establish a new connection: [WinError 10061] 대상 컴퓨터에서 연결을 거부했으므로 연결하지 못했습니다')': /session/425d7a5bbee80e6a911a1e7a118162d0
+2026-01-06 19:51:33,570 - INFO - ========== 스크래핑 시도 2/3 ==========
+2026-01-06 19:51:37,830 - INFO - 페이지 로딩 및 '첫화부터' 정렬 상태 확인 중...
+2026-01-06 19:51:38,012 - INFO - 1화 조회수(75920) 확인 완료.
+2026-01-06 19:51:38,013 - INFO - '첫화부터 ↓↑' 정렬 버튼 클릭...
+2026-01-06 19:51:38,043 - INFO - 정렬 변경 대기 중...
+2026-01-06 19:51:48,809 - ERROR - 오류 발생 (시도 2): Message: 
+Stacktrace:
+Symbols not available. Dumping unresolved backtrace:
+	0x7ff74eff88e5
+	0x7ff74eff8940
+	0x7ff74edd165d
+	0x7ff74ee29a33
+	0x7ff74ee29d3c
+	0x7ff74ee7df67
+	0x7ff74ee7ac97
+	0x7ff74ee1ac29
+	0x7ff74ee1ba93
+	0x7ff74f310640
+	0x7ff74f30af80
+	0x7ff74f3296e6
+	0x7ff74f015de4
+	0x7ff74f01ed8c
+	0x7ff74f002004
+	0x7ff74f0021b5
+	0x7ff74efe7ee2
+	0x7ffb73457374
+	0x7ffb746fcc91
+
+2026-01-06 19:51:51,055 - INFO - 오류로 인해 재시도합니다...
+2026-01-06 19:52:00,146 - WARNING - Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000001F17AD4AAA0>: Failed to establish a new connection: [WinError 10061] 대상 컴퓨터에서 연결을 거부했으므로 연결하지 못했습니다')': /session/8bc55eb15778e77634da4acc0d57be30
+2026-01-06 19:52:04,241 - WARNING - Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000001F17AD89690>: Failed to establish a new connection: [WinError 10061] 대상 컴퓨터에서 연결을 거부했으므로 연결하지 못했습니다')': /session/8bc55eb15778e77634da4acc0d57be30
+2026-01-06 19:52:08,328 - WARNING - Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000001F17AD89BD0>: Failed to establish a new connection: [WinError 10061] 대상 컴퓨터에서 연결을 거부했으므로 연결하지 못했습니다')': /session/8bc55eb15778e77634da4acc0d57be30
+2026-01-06 19:52:12,432 - INFO - ========== 스크래핑 시도 3/3 ==========
+2026-01-06 19:52:16,595 - INFO - 페이지 로딩 및 '첫화부터' 정렬 상태 확인 중...
+2026-01-06 19:52:16,784 - INFO - 1화 조회수(75920) 확인 완료.
+2026-01-06 19:52:16,784 - INFO - '첫화부터 ↓↑' 정렬 버튼 클릭...
+2026-01-06 19:52:16,812 - INFO - 정렬 변경 대기 중...
+2026-01-06 19:52:27,585 - ERROR - 오류 발생 (시도 3): Message: 
+Stacktrace:
+Symbols not available. Dumping unresolved backtrace:
+	0x7ff74eff88e5
+	0x7ff74eff8940
+	0x7ff74edd165d
+	0x7ff74ee29a33
+	0x7ff74ee29d3c
+	0x7ff74ee7df67
+	0x7ff74ee7ac97
+	0x7ff74ee1ac29
+	0x7ff74ee1ba93
+	0x7ff74f310640
+	0x7ff74f30af80
+	0x7ff74f3296e6
+	0x7ff74f015de4
+	0x7ff74f01ed8c
+	0x7ff74f002004
+	0x7ff74f0021b5
+	0x7ff74efe7ee2
+	0x7ffb73457374
+	0x7ffb746fcc91
+
+2026-01-06 19:52:29,829 - ERROR - 최대 재시도 횟수 초과. 실패.
+2026-01-06 19:52:33,897 - WARNING - Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000001F17B0F67D0>: Failed to establish a new connection: [WinError 10061] 대상 컴퓨터에서 연결을 거부했으므로 연결하지 못했습니다')': /session/03a56c77b26daad367917570d31fc272
+2026-01-06 19:52:37,988 - WARNING - Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000001F17B0F7E80>: Failed to establish a new connection: [WinError 10061] 대상 컴퓨터에서 연결을 거부했으므로 연결하지 못했습니다')': /session/03a56c77b26daad367917570d31fc272
+2026-01-06 19:52:42,085 - WARNING - Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000001F17B0F78B0>: Failed to establish a new connection: [WinError 10061] 대상 컴퓨터에서 연결을 거부했으므로 연결하지 못했습니다')': /session/03a56c77b26daad367917570d31fc272
+2026-01-06 19:55:07,766 - INFO - ========== 스크래핑 시도 1/3 ==========
+2026-01-06 19:55:11,542 - INFO - 페이지 로딩 확인 중...
+2026-01-06 19:55:11,755 - INFO - 1화 조회수(75920) 확인. 제목: 무료
+                      
+				기연을 얻다
+2026-01-06 19:55:11,755 - INFO - '첫화부터 ↓↑' 정렬 버튼 클릭...
+2026-01-06 19:55:11,786 - INFO - 정렬 변경 대기 중 (제목이 바뀔 때까지)...
+2026-01-06 19:55:22,045 - ERROR - 오류 발생 (시도 1): Message: 
+Stacktrace:
+Symbols not available. Dumping unresolved backtrace:
+	0x7ff74eff88e5
+	0x7ff74eff8940
+	0x7ff74edd165d
+	0x7ff74ee29a33
+	0x7ff74ee29d3c
+	0x7ff74ee7df67
+	0x7ff74ee7ac97
+	0x7ff74ee1ac29
+	0x7ff74ee1ba93
+	0x7ff74f310640
+	0x7ff74f30af80
+	0x7ff74f3296e6
+	0x7ff74f015de4
+	0x7ff74f01ed8c
+	0x7ff74f002004
+	0x7ff74f0021b5
+	0x7ff74efe7ee2
+	0x7ffb73457374
+	0x7ffb746fcc91
+
+2026-01-06 19:55:25,782 - INFO - 오류로 인해 5초 후 재시도합니다...
+2026-01-06 19:55:30,785 - INFO - ========== 스크래핑 시도 2/3 ==========
+2026-01-06 19:58:21,915 - INFO - ========== 스크래핑 시도 1/3 ==========
+2026-01-06 19:58:26,109 - INFO - 1화 조회수(75920) 확인. (제목: 무료
+                      
+				기연을 얻다)
+2026-01-06 19:58:26,110 - INFO - '첫화부터 ↓↑' 정렬 버튼 클릭...
+2026-01-06 19:58:26,142 - INFO - 정렬 반영 대기 중 (2초)...
+2026-01-06 19:58:28,312 - INFO - 확인된 최신화: 'PLUS
+                      
+				발표(2)', 조회수: 11569
