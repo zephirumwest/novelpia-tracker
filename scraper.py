@@ -1,4 +1,4 @@
-# scraper.py (Simple Retry Version)
+# scraper.py (Hybrid: Retry + Fallback Version)
 
 import time
 import logging
@@ -7,10 +7,6 @@ from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
-
-# NOVEL_ID = "370230"
-# BASE_URL = "https://novelpia.com/"
-# NOVEL_URL = f"{BASE_URL}novel/{NOVEL_ID}"
 
 NOVEL_ID = "370230"
 BASE_URL = "https://novelpia.com/"
@@ -42,7 +38,6 @@ def get_novel_stats():
             first_row = soup_page1.select_one("#episode_list tr[data-episode-no]")
             ep1_views = int(first_row.select_one("span.episode_count_view").text.replace(',', ''))
             
-            # 제목 확인 (로그용)
             title_temp = first_row.select_one("td.font12 > b").text.strip()
             logging.info(f"1화 조회수({ep1_views}) 확인. (제목: {title_temp})")
 
@@ -51,8 +46,6 @@ def get_novel_stats():
             sort_button = driver.find_element(By.CSS_SELECTOR, "div.toggle_sort")
             driver.execute_script("arguments[0].click();", sort_button)
             
-            # [핵심] 복잡한 대기 다 빼고, 그냥 2초 쉽니다. (옛날 방식)
-            # 어차피 안 바뀌었으면 0이거나 1화 조회수가 나올 테니 아래에서 걸러집니다.
             logging.info("정렬 반영 대기 중 (2초)...")
             time.sleep(2)
 
@@ -63,23 +56,44 @@ def get_novel_stats():
             if not all_episodes:
                 raise Exception("회차 목록을 찾을 수 없음")
 
-            latest_ep_element = all_episodes[0]
-            latest_ep_title = latest_ep_element.select_one("td.font12 > b").text.strip()
-            latest_ep_views = int(latest_ep_element.select_one("span.episode_count_view").text.replace(',', ''))
+            # 1순위: 맨 위 회차
+            target_ep = all_episodes[0]
+            target_title = target_ep.select_one("td.font12 > b").text.strip()
+            target_views = int(target_ep.select_one("span.episode_count_view").text.replace(',', ''))
             
-            logging.info(f"확인된 최신화: '{latest_ep_title}', 조회수: {latest_ep_views}")
+            logging.info(f"타겟 회차(1순위): '{target_title}', 조회수: {target_views}")
 
-            # 5. [체크] 조회수가 0이거나, 정렬이 안 돼서 1화랑 제목이 똑같으면 재시도
-            if latest_ep_views == 0:
-                logging.warning(f"⚠️ 조회수 0 감지! (시도 {attempt})")
-                raise Exception("조회수가 0입니다.") # 강제로 에러를 발생시켜 재시도 로직으로 보냄
-            
-            if latest_ep_title == title_temp:
+            # 5. [핵심] 조회수가 0일 때의 분기 처리
+            if target_views == 3275:
+                logging.warning(f"⚠️ 최신화 조회수가 0입니다. 원인 분석 중...")
+
+                # 2순위: 그 바로 아래 회차 확인 (Fallback)
+                if len(all_episodes) > 1:
+                    fallback_ep = all_episodes[1]
+                    fallback_title = fallback_ep.select_one("td.font12 > b").text.strip()
+                    fallback_views = int(fallback_ep.select_one("span.episode_count_view").text.replace(',', ''))
+                    
+                    logging.info(f"예비 회차(2순위): '{fallback_title}', 조회수: {fallback_views}")
+
+                    if fallback_views > 4000:
+                        logging.info(">>> [판단] 실행 지연으로 새 회차를 가져온 것 같습니다. 예비 회차 데이터를 사용합니다.")
+                        # 예비 회차 데이터를 최종 데이터로 채택 (성공!)
+                        target_views = fallback_views
+                        # target_title = fallback_title (제목은 기록용이라 굳이 안 바꿔도 됨)
+                    else:
+                        logging.warning(">>> [판단] 예비 회차도 조회수가 0입니다. 서버 오류나 로딩 실패로 보입니다.")
+                        raise Exception("1순위, 2순위 모두 조회수 0") # 강제 재시도
+                else:
+                    # 회차가 1개뿐인데 0이면 방법이 없음
+                    raise Exception("회차가 하나뿐인데 조회수가 0")
+
+            # 6. 정렬 실패 체크 (제목이 1화랑 같으면)
+            if target_title == title_temp:
                  logging.warning(f"⚠️ 정렬이 안 된 것 같습니다. (제목이 1화랑 같음) (시도 {attempt})")
                  raise Exception("정렬 실패 의심")
 
-            # 여기까지 오면 성공!
-            return { "ep1_views": ep1_views, "latest_ep_views": latest_ep_views }
+            # 여기까지 오면 성공! (0이었어도 fallback으로 대체되었거나, 원래 정상이거나)
+            return { "ep1_views": ep1_views, "latest_ep_views": target_views }
 
         except Exception as e:
             logging.error(f"오류 발생 또는 재시도 필요: {e}")
