@@ -64,7 +64,7 @@ def get_novel_stats():
             logging.info(f"타겟 회차(1순위): '{target_title}', 조회수: {target_views}")
 
             # 5. [핵심] 조회수가 0일 때의 분기 처리
-            if target_views == 3275:
+            if target_views == 0:
                 logging.warning(f"⚠️ 최신화 조회수가 0입니다. 원인 분석 중...")
 
                 # 2순위: 그 바로 아래 회차 확인 (Fallback)
@@ -75,7 +75,7 @@ def get_novel_stats():
                     
                     logging.info(f"예비 회차(2순위): '{fallback_title}', 조회수: {fallback_views}")
 
-                    if fallback_views > 4000:
+                    if fallback_views > 1:
                         logging.info(">>> [판단] 실행 지연으로 새 회차를 가져온 것 같습니다. 예비 회차 데이터를 사용합니다.")
                         # 예비 회차 데이터를 최종 데이터로 채택 (성공!)
                         target_views = fallback_views
@@ -118,5 +118,6 @@ def get_novel_stats():
                     driver.quit()
                 except:
                     pass
+
 
     return None
