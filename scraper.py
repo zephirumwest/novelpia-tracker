@@ -64,7 +64,7 @@ def get_novel_stats():
             logging.info(f"타겟 회차(1순위): '{target_title}', 조회수: {target_views}")
 
             # 5. [핵심] 조회수가 0일 때의 분기 처리
-            if target_views == 0:
+            if target_views <= 4000:
                 logging.warning(f"⚠️ 최신화 조회수가 0입니다. 원인 분석 중...")
 
                 # 2순위: 그 바로 아래 회차 확인 (Fallback)
@@ -121,3 +121,4 @@ def get_novel_stats():
 
 
     return None
+
